@@ -1,0 +1,109 @@
+@font-face {
+    font-family: 'ARCADECLASSIC';
+    src: url('ARCADECLASSIC.TTF') format('truetype');
+    }
+
+    body, html {
+        height: 100%;
+        margin: 0;
+        color: white;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        font-size: 110%;
+        background-color: black;
+        background-image: url('brick.jpg');
+        background-repeat: repeat; /* Ezzel állítod be az ismétlődést */
+        background-attachment: fixed;
+    }
+
+
+    #header, #footer {
+        height: 10%;
+        width: 100%;
+        font-size: 80%;
+        display: flex;
+        align-items: center; /* Vertikális középre igazítás */
+        justify-content: center; /* Horizontális középre igazítás */
+    }
+
+    h1 {
+        font-family: 'ARCADECLASSIC', 'Courier New', monospace;
+        font-size: 200%;
+        color: #55ff55;
+        margin: 0px;
+    }
+
+    #main-container {
+        display: flex;
+        height: 80%;
+    }
+
+    #image_placer {
+        width: 40%;
+        overflow: hidden; /* Elrejti a túlcsorduló tartalmat */
+        position: relative; /* Szükséges a gyermek elemek abszolút pozícionálásához */
+    }
+
+    #image_placer img {
+        width: 90%; /* A kép szélessége a szülő szélességéhez igazodik */
+        height: 90%; /* A kép magassága mindig 100% */
+        object-fit: contain;
+        display: block; /* Eltávolítja a kis méretű felső és alsó margót */
+        position: absolute; /* Abszolút pozícionálás a relatív szülőhöz képest */
+        top: 0;
+        left: 0;
+        margin-top: 10px;
+        margin-left: 10px;
+        filter: drop-shadow(0 -5px 0 gray)
+        drop-shadow(0 5px 0 gray)
+        drop-shadow(-5px 0 0 gray)
+        drop-shadow(5px 0 0 gray);
+    }
+
+    #text {
+        width: 60%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #story {
+        height: 70%;
+        overflow-y: auto;
+        padding: 10px;
+    }
+
+    #options {
+        height: 30%;
+        padding: 10px;
+    }
+
+    button {
+        background-color: #55ffff;
+        color: black;
+        padding: 4px 6px;
+        font-size: 18px;
+        border: 3px solid #0081ba;
+        cursor: pointer;
+        margin: 6px;
+        display: block;
+    }
+
+    a {
+        color: gray; /* Az alapértelmezett szín a sima linkek számára */
+        text-decoration: none; /* Kikapcsoljuk a hiperhivatkozások aláhúzását */
+    }
+    
+    a:visited {
+        color: gray; /* Az alapértelmezett szín a meglátogatott linkek számára */
+    }
+    
+    a:hover,
+    a:active {
+        color: gray; /* Az alapértelmezett szín, amikor az egér fölött vagy a linket éppen aktívan használják */
+    }
+
+    #hangCheckbox {
+        transform: scale(2); /* A méret növelése, például itt kétszeresére */
+        margin: 20px;
+    }
+

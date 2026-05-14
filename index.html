@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Szoftvertesztelő, ISTQB, Dienes Zsolt – szoftverteszter.hu</title>
+  <meta name="description" content="Szoftvertesztelő blog, könyv, tanácsadás és letölthető anyagok Dienes Zsolttól, ISTQB minősítéssel. Peti a szoftverteszter hivatalos oldala.">
+  <meta name="keywords" content="szoftvertesztelő, szoftvertesztelés, ISTQB, tesztelés könyv, Dienes Zsolt, Peti a szoftverteszter">
+  <meta name="author" content="Dienes Zsolt">
+  <meta name="robots" content="index, follow">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Szoftvertesztelő, ISTQB, Dienes Zsolt – szoftverteszter.hu">
+  <meta property="og:description" content="Szoftvertesztelő blog, könyv, tanácsadás és letölthető anyagok Dienes Zsolttól, ISTQB minősítéssel.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://szoftverteszter.hu/">
+  <meta property="og:image" content="https://szoftverteszter.hu/img/dienes_zsolt.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Szoftvertesztelő, ISTQB, Dienes Zsolt – szoftverteszter.hu">
+  <meta name="twitter:description" content="Szoftvertesztelő blog, könyv, tanácsadás és letölthető anyagok Dienes Zsolttól, ISTQB minősítéssel.">
+  <meta name="twitter:image" content="https://szoftverteszter.hu/img/dienes_zsolt.jpg">
+  <link href="https://fonts.googleapis.com/css2?family=NT+Bau+Mono&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        font-family: 'NT Bau Mono', monospace;
+        background-color: #f5f5f5;
+        color: #000;
+        display: flex;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    main {
+        flex: 1;
+        padding: 40px;
+        overflow-y: auto;
+        padding-bottom: 120px; /* extra hely az alján */
+        margin-right: 220px; /* ugyanannyi, mint az aside szélessége */
+    }
+
+    aside {
+        width: 220px;
+        background: #fff;
+        padding: 20px;
+        border-left: 1px solid #ccc;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        position: fixed;
+        right: 0;
+        top: 0;
+        height: 100vh;
+        box-sizing: border-box;
+    }
+
+    section {
+        margin-bottom: 60px;
+    }
+
+    h1 {
+        font-size: 32px;
+        margin-bottom: 0px;
+        margin-top: 20px;
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    h1::before {
+        content: '■';
+        font-size: 18px;
+        display: inline-block;
+        margin-right: 8px;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-top: 20px;
+      border-top: 1px solid black;
+      padding-top: 20px;
+      letter-spacing: 1px;
+    }
+
+    p {
+      max-width: 700px;
+      font-size: 14px;
+      line-height: 1.5;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+      margin-top: 10px;
+    }
+
+    li::before {
+      content: '• ';
+    }
+
+    .columns {
+      display: flex;
+      gap: 60px;
+      font-size: 14px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .columns > div {
+      flex: 1;
+      min-width: 200px;
+    }
+
+    nav {
+      line-height: 2;
+      font-size: 14px;
+    }
+
+.nav-section {
+        display: block;
+        padding-top: 20px;
+        margin-top: 20px;
+        border-top: 1px solid black;
+        text-decoration: none;
+        color: inherit;
+}
+.nav-section:hover {
+        color:orangered;
+}
+
+
+.nav-section.hidden {
+  color: #fff;              /* teljesen fehér — háttérrel egybeolvad */
+  transition: color 0.3s ease;
+  pointer-events: auto;     /* továbbra is rá lehet vinni az egeret */
+}
+
+.nav-section.hidden:hover {
+  color: gainsboro;              /* finoman előbukkan szürkében */
+}
+
+    .title {
+        font-weight: bold;
+        margin-bottom: 20px;
+        display: block;
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .title:hover,
+    .title:active {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    footer {
+      font-size: 12px;
+      border-top: 1px solid #000;
+      padding-top: 10px;
+      margin-top: 30px;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .download {
+  font-size: 18px;
+  font-weight: bold;
+  text-decoration: none;
+  color: inherit;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+  padding: 10px;
+  border: 1px solid #000;
+}
+
+.download::before {
+  content: "";
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  background-image: url('img/download.png');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.download:hover {
+  color: orangered;
+}
+
+ 
+.photo-hover {
+  position: relative;
+  width: 300px;
+  height: auto;
+ min-height: 250px;
+  margin-bottom: 10px;
+}
+
+.photo-hover img {
+  display: block;
+  width: 300px;
+  height: auto;
+}
+
+.photo-hover .photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.6s ease-in-out;
+}
+
+.photo-hover .default {
+  z-index: 1;
+  opacity: 1;
+}
+
+.photo-hover .hover {
+  z-index: 2;
+  opacity: 0;
+}
+
+.photo-hover:hover .hover {
+  opacity: 1;
+}
+
+.photo-hover:hover .default {
+  opacity: 0;
+}
+
+
+
+
+
+
+/* ----- Reszponzív ----- */
+@media screen and (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+    height: auto;
+    overflow: auto;
+  }
+
+  aside {
+    position: static;
+    width: 100%;
+    height: auto;
+    border-left: none;
+    border-top: 1px solid #ccc;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px 15px;
+    box-sizing: border-box;
+    justify-content: space-between;
+  }
+
+  aside > div {
+    flex: 1 1 100%;
+    margin-bottom: 20px;
+  }
+
+  main {
+    margin-right: 0;
+    padding: 20px;
+  }
+
+  .columns {
+    flex-direction: column;
+    gap: 30px;
+  }
+
+  .columns > div {
+    min-width: 100%;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  h2 {
+    font-size: 16px;
+  }
+
+  .download {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .download::before {
+    width: 24px;
+    height: 24px;
+  }
+
+.photo-hover {
+  position: relative;
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 30px;
+}
+
+.photo-hover img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.photo-hover .photo {
+  transition: opacity 0.6s ease-in-out;
+}
+
+.photo-hover .default {
+  z-index: 1;
+  opacity: 1;
+  position: relative;
+}
+
+.photo-hover .hover {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 2;
+  opacity: 0;
+}
+
+  .nav-section:last-of-type {
+    margin-bottom: 30px; /* extra tér a menü és a kapcsolat között */
+  }
+
+}
+
+
+ 
+
+
+  </style>
+</head>
+<body>
+
+  <main>
+
+
+<!--blokk 1 kezd -->
+
+<section  id="untitled-project">
+    <h1>untitled project</h1>
+
+    <h2>Saját könyv a láthatáron!</h2>
+    <p>Javában készül az első, tesztelésről szóló könyvem, valamikor 2026-ban be is fogom fejezni. Szerintem.</p>
+
+    <div class="photo-hover">
+        <img src="img/untitled_project.jpg" alt="Untitled Project" class="photo default">
+        <img src="img/untitled_project_hover.jpg" alt="Untitled Project" class="photo hover">
+    </div>
+
+
+</section>
+
+<!--blokk 1 vege  -->
+
+
+<!--blokk 2 kezd -->
+
+
+<section id="peti-a-szoftverteszter">
+    <h1>peti a szoftverteszter</h1>
+
+    <h2>leírás</h2>
+    <p>A <i>Peti a szoftverteszter</i>t akkor készítettem, amikor a kislányom egy éves volt, és emiatt elég sok, hasonló formátumú (néhány oldalas, kemény lapokból álló) gyerekköny került a kezeim közé. Főhőse egy Peti nevű srác, aki folyamatosan lépked felfelé a tesztelői ranglétrán - manuális tesztelőből automatizált mérnök, majd tesztmenedzser lesz, végül pedig a civilizációnkkal együtt ő maga is elhalálozik. Az olvasáshoz vidámságban gazdag perceket kívánok!</p>
+    
+    <div class="columns">
+    <div class="photo-hover">
+        <img src="img/peti1.jpg" alt="Peti a szoftverteszter" class="photo default">
+        <img src="img/peti4.jpg" alt="Peti a szoftverteszter" class="photo hover">
+    </div>
+    <div class="photo-hover">
+        <img src="img/peti2.jpg" alt="Peti a szoftverteszter" class="photo default">
+        <img src="img/peti5.jpg" alt="Peti a szoftverteszter" class="photo hover">
+    </div>
+    <div class="photo-hover">
+        <img src="img/peti3.jpg" alt="Peti a szoftverteszter" class="photo default">
+        <img src="img/peti6.jpg" alt="Peti a szoftverteszter" class="photo hover">
+    </div>
+    </div>
+
+    <p>Eme gyűjteményes digitális kiadvány négy minitörténetet tartalmaz, melyek közül az első, a <i>Peti, az agilis szoftvertesztelő</i> 2014-ben készült, ezt követte a  <i>Peti, a szerelmes tesztautomatizáló</i> (2016), a  <i>Peti a reptiliánok ellen</i> (2017), majd az ötéves évforduló alkalmából megkapta a lezárást is,  <i>Peti a tesztmenedzser: Apokalipszis</i> címmel (2019).</p>
+
+    <p><strong>Letölthető magyar és angol nyelven!</strong></p>
+
+    <a href="download/peti.a.szoftverteszter.2019.hun.pdf" class="download">Peti a szoftverteszter - magyar változat</a><br>
+    <a href="download/petey.the.software.tester.2019.eng.pdf" class="download">Petey the Software tester - english version</a>
+
+    <ul>
+  <li>formátum: PDF</li>
+  <li>oldalszám: 46</li>
+  <li>méret: 20 MByte</li>
+    </ul>
+
+</section>
+
+<!--blokk 2 vege  -->
+
+
+
+
+<!--blokk 3 kezd -->
+
+
+<section id="szemelyes">
+    <h1>személyes</h1>
+
+      <h2>bemutatkozás</h2>
+    <p>Hello <del>world</del>, én Dienes Zsolt vagyok, 15+ éve tesztmérnökként tevékenykedem (korábban: NetPincer, Magyar Telekom, OTP Mobil, jelenleg: Graphisoft), Full Advanced ISTQB minősítéssel. Dolgoztam különböző szoftverfejlesztési módszertanban (vízesés, Kanban, Scrum) és különböző szerepkörökben (manuális tesztelés, automatizálás, oktatói tevékenység ISTQB Foundation és Agile tanfolyamokon). Ismerem  és tisztelem az Agilis Kiáltvány, valamint a lean alapértékeit, és nagyon szeretem a nutellát.</p>
+    
+    <div class="columns">
+      <div>
+        <strong>teszetlői tanúsítványaim:</strong>
+        <ul>
+            <li>ISTQB Foundation</li>
+            <li>ISTQB Agile Tester</li>
+            <li>ISTQB Test Automation Engineer</li>
+            <li>ISTQB Test Analyst</li>
+            <li>ISTQB Technical Test Analyst</li>
+            <li>ISTQB Test Manager</li>
+            <li>ISTQB Full Advanced</li>
+        </ul>
+        Budapesten, Rákoskeresztúron élek. Van egy kislányom, egy Nintendo Switch 2 konzolom, egy gekkóm és ipari mennyiségű legóm.
+
+
+      </div>
+
+  <div class="photo-hover">
+    <img src="img/dienes_zsolt.jpg" alt="Dienes Zsolt" class="photo default">
+    <img src="img/dienes_zsolt_hover.jpg" alt="Dienes Zsolt" class="photo hover">
+  </div>
+
+    </div>
+</section>
+
+<!--blokk 3 vege  -->
+
+
+
+
+</main>
+  <aside>
+    <div>
+      <a href="index.html" class="title">szoftverteszter</a>
+    <nav>
+        <a class="nav-section active" href="#untitled-project">untitled project</a>
+        <a class="nav-section" href="#peti-a-szoftverteszter">peti a szoftverteszter</a>
+        <a class="nav-section" href="#szemelyes">személyes</a>
+        <a class="nav-section hidden" href="easteregg/index.html">easter egg</a>
+    </nav>
+    </div>
+    <div>
+      <div style="margin-bottom: 10px;">
+        <strong>kapcsolat</strong><br>
+        <a href="zsoltdienesKUKACgmailPONThu">e-mail</a><br>
+        <a href="https://www.linkedin.com/in/dieneszs/">linkedin</a><br>
+      </div>
+        <footer id="copyright">
+        © 2014 - <span id="current-year"></span><br>
+        </footer>
+    </div>
+  </aside>
+
+</body>
+
+<script>
+  const currentYear = new Date().getFullYear();
+  document.getElementById("current-year").textContent = currentYear;
+</script>
+
+</html>

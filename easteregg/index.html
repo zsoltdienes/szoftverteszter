@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="intro.css">
+  <title>KALANDOR3.BAT</title>
+
+</head>
+<body>
+
+
+  <img id="image" src="pbsz_logo.jpg" alt="Kaland!">
+
+
+
+
+<script>
+  
+  function showLogo() {
+    var image = document.getElementById('image');
+  
+    // Beállítjuk a kép forrását
+    image.src = "pbsz_logo.jpg";
+  
+    // Megjelenítjük a képet 3 másodpercre
+    setTimeout(function() {
+      // Frissítjük az UI-t
+      window.location.href = 'game.html';
+    }, 3000); // 3 másodperces időzítés
+  }  
+
+  showLogo();
+  </script>
+
+</body>
+</html>

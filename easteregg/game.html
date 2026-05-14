@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KALANDOR.BAT</title>
+    <link rel="preload" href="01_opening.mp3" as="audio">
+    <link rel="preload" href="02_ingame.mp3" as="audio">
+    <link rel="preload" href="03_you_loose.mp3" as="audio">
+    <link rel="preload" href="04_you_win.mp3" as="audio">
+    <link rel="preload" href="05_wizard.mp3" as="audio">
+    <link rel="preload" href="creatures.jpg" as="image">
+    <link rel="preload" href="death1.jpg" as="image">
+    <link rel="preload" href="death2.jpg" as="image">
+    <link rel="preload" href="death3.jpg" as="image">
+    <link rel="preload" href="dragon.jpg" as="image">
+    <link rel="preload" href="forest.jpg" as="image">
+    <link rel="preload" href="hut.jpg" as="image">
+    <link rel="preload" href="scene01_chasing.jpg" as="image">
+    <link rel="preload" href="scene01_junkyard.jpg" as="image">
+    <link rel="preload" href="scene02_escape.jpg" as="image">
+    <link rel="preload" href="scene02_ruins.jpg" as="image">
+    <link rel="preload" href="scene03_shell.jpg" as="image">
+    <link rel="preload" href="scene03_desert.jpg" as="image">
+    <link rel="preload" href="scene04_napping.jpg" as="image">
+    <link rel="preload" href="scene04_wastedump.jpg" as="image">
+    <link rel="preload" href="scene05_no_legs.jpg" as="image">
+    <link rel="preload" href="scene05_eddie_appears.jpg" as="image">
+    <link rel="preload" href="scene06_attack.jpg" as="image">
+    <link rel="preload" href="scene06_flatrobbing.jpg" as="image">
+    <link rel="preload" href="scene07_benzin.jpg" as="image">
+    <link rel="preload" href="scene08_panic_in_the_dark.jpg" as="image">
+    <link rel="preload" href="scene09_camp_entrance.jpg" as="image">
+    <link rel="preload" href="scene09_useful_things.jpg" as="image">
+    <link rel="preload" href="scene11_colon.jpg" as="image">
+    <link rel="preload" href="scene12_pass.jpg" as="image">
+    <link rel="preload" href="scene12_diszkusszio.jpg" as="image">
+    <link rel="preload" href="scene13_dome.jpg" as="image">
+    <link rel="preload" href="scene13_gaster.jpg" as="image">
+    <link rel="preload" href="scene14_fortress.jpg" as="image">
+    <link rel="preload" href="scene15_megafon.jpg" as="image">
+    <link rel="preload" href="scene16_revenge.jpg" as="image">
+    <link rel="preload" href="scene16_pharynx.jpg" as="image">
+    <link rel="preload" href="scene18_access_granted.jpg" as="image">
+    <link rel="preload" href="scene18_orr.jpg" as="image">
+    <link rel="preload" href="scene19_nest.jpg" as="image">
+    <link rel="preload" href="scene19_takony.jpg" as="image">
+    <link rel="preload" href="scene20_freedom.jpg" as="image">
+    <link rel="preload" href="scene21_the_room.jpg" as="image">
+    <link rel="preload" href="scene23_landing_on_god_b.jpg" as="image">
+    <link rel="preload" href="scene25_nyul.jpg" as="image">
+    <link rel="preload" href="start1.jpg" as="image">
+    <link rel="preload" href="start2.jpg" as="image">
+    <link rel="preload" href="start3.jpg" as="image">
+    <link rel="preload" href="transformed_wizard.jpg" as="image">
+    <link rel="preload" href="win1.jpg" as="image">
+    <link rel="preload" href="win2.jpg" as="image">
+    <link rel="preload" href="win3a.jpg" as="image">
+    <link rel="preload" href="win3b.jpg" as="image">
+    <link rel="preload" href="wizard.jpg" as="image">
+
+    <link rel="stylesheet" media="(max-width: 767px)" href="mobile.css">
+    <link rel="stylesheet" media="(min-width: 768px)" href="desktop.css">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <style>
+        #game-list button.selected {
+          background-color: #333;
+          color: white;
+          border: 2px solid lime;
+        }
+      
+        #game-list button {
+          margin-left: 5px;
+          cursor: pointer;
+        }
+
+        #game-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  gap: 8px;
+  flex-wrap: wrap; /* ha kisebb képernyőn van, ne törjön csúnyán */
+}
+
+        #game-list li button {
+        padding: 4px 12px;
+        font-size: 90%;
+        background-color: #77e5ff;
+        border: 2px solid #00bfff;
+        font-family: 'Courier New', monospace;
+        font-weight: bold;
+        cursor: pointer;
+        }
+
+        #game-list button.selected {
+        background-color: #333;
+        color: white;
+        border-color: lime;
+        }
+
+        #game-list li button {
+        image-rendering: pixelated;
+        box-shadow: 2px 2px 0px #111;
+}
+      </style>
+
+</head>
+<body>
+
+   
+    <div id="header">
+        <h1>KALANDOR.BAT</h1>
+    </div>
+
+    <div id="main-container">
+
+        <div id="image_placer">
+            <img id="image" src="" alt="Kaland!">
+        </div>
+
+        <div id="text">
+
+            <div id="story">
+
+
+                <div id="settings">
+                    <h3>Játék indítása / Launch Game</h3>
+
+                    <ul id="game-list" style="list-style: none; padding: 0;">
+                        <li data-game="logic1.js">
+                          Kalandor 1 –
+                          <button onclick="selectGame(this, 'logic1.js', 'hun')">Magyar</button>
+                          <button onclick="selectGame(this, 'logic1.js', 'eng')">English</button>
+                        </li>
+                        <li data-game="logic2.js">
+                          Kalandor 2 –
+                          <button onclick="selectGame(this, 'logic2.js', 'hun')">Magyar</button>
+                          <button onclick="selectGame(this, 'logic2.js', 'eng')">English</button>
+                        </li>
+                        <li data-game="logic3.js">
+                          Kalandor 3 –
+                          <button onclick="selectGame(this, 'logic3.js', 'hun')">Magyar</button>
+                          <button onclick="selectGame(this, 'logic3.js', 'eng')">English</button>
+                        </li>
+                      </ul>
+                  
+                    Zene / Music:
+                    <input type="checkbox" id="hangCheckbox" onchange="toggleSound()">
+                  </div>
+
+                  
+
+
+            </div>
+
+            <div id="options">
+                <button onclick="startSelectedGame()">START</button>
+            </div>
+
+        </div>
+
+
+
+
+    </div>
+    
+
+    <div id="footer">
+      2024–2025. Paprika Bácsi Szoftverkohója ｜ powered by&nbsp;<a href="https://szoftverteszter.hu">szoftverteszter.hu</a>
+    </div>
+    
+    
+
+</body>
+</html>
+
+<script>
+
+  window.addEventListener('DOMContentLoaded', () => {
+  // A legelső <li> elem (Kalandor 1)
+  const firstGameLi = document.querySelector('#game-list li');
+
+  // Most a "Magyar" gomb van elöl → index 0
+  const defaultBtn = firstGameLi.querySelectorAll('button')[0];
+
+  // Meghívjuk a selectGame függvényt, hogy kijelölje
+  if (defaultBtn) selectGame(defaultBtn, 'logic1.js', 'hun');
+
+  const image = document.getElementById('image');
+    image.src = 'trilogy.jpg';
+    image.style.display = 'inline';
+});
+
+    function toggleSound() {
+      window.soundEnabled = document.getElementById('hangCheckbox').checked;
+    }
+  
+ 
+let selectedGame = 'logic1.js';
+let selectedLang = 'hun';
+
+function toggleSound() {
+  window.soundEnabled = document.getElementById('hangCheckbox').checked;
+}
+
+function selectGame(button, game, lang) {
+  selectedGame = game;
+  selectedLang = lang;
+
+  // Eltávolítjuk a kijelöléseket
+  document.querySelectorAll('#game-list button').forEach(btn => {
+    btn.classList.remove('selected');
+  });
+
+  // Kiemeljük a kiválasztott gombot
+  button.classList.add('selected');
+}
+
+function startSelectedGame() {
+  window.language = selectedLang;
+  window.soundEnabled = document.getElementById('hangCheckbox').checked;
+
+  const oldScript = document.getElementById("game-script");
+  if (oldScript) oldScript.remove();
+
+  const script = document.createElement("script");
+  script.src = selectedGame;
+  script.id = "game-script";
+
+  script.onload = () => {
+    if (typeof updateUI === 'function') updateUI();
+  };
+
+  document.body.appendChild(script);
+}
+
+  </script>
