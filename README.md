@@ -1,2 +1,1 @@
-# szoftverteszter
-Szoftverteszter.hu
+
