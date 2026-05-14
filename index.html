@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Szoftvertesztelő, ISTQB, Dienes Zsolt – szoftverteszter.hu</title>
+  <title>szoftverteszter.hu</title>
   <meta name="description" content="Szoftvertesztelő blog, könyv, tanácsadás és letölthető anyagok Dienes Zsolttól, ISTQB minősítéssel. Peti a szoftverteszter hivatalos oldala.">
   <meta name="keywords" content="szoftvertesztelő, szoftvertesztelés, ISTQB, tesztelés könyv, Dienes Zsolt, Peti a szoftverteszter">
   <meta name="author" content="Dienes Zsolt">
@@ -77,6 +77,8 @@
         display: flex;
         align-items: center;
         gap: 10px;
+        border-bottom: 1px solid black;
+        padding-bottom: 5px;
     }
 
     h1::before {
@@ -89,7 +91,6 @@
     h2 {
       font-size: 18px;
       margin-top: 20px;
-      border-top: 1px solid black;
       padding-top: 20px;
       letter-spacing: 1px;
     }
@@ -121,6 +122,40 @@
     .columns > div {
       flex: 1;
       min-width: 200px;
+    }
+
+    /* Blokk 1: kép balra (1/3), szöveg jobbra (2/3) */
+    .row {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      margin-top: 20px;
+    }
+    .row .col-image {
+      flex: 1 1 33%;
+      max-width: 33%;
+      min-width: 180px;
+    }
+    .row .col-text {
+      flex: 2 1 67%;
+      max-width: 67%;
+    }
+    .single-photo {
+      display: block;
+      width: 100%;
+      height: auto;
+      margin-bottom: 10px;
+    }
+    @media screen and (max-width: 900px) {
+      .row {
+        flex-direction: column;
+        gap: 20px;
+      }
+      .row .col-image,
+      .row .col-text {
+        max-width: 100%;
+        flex: 1 1 100%;
+      }
     }
 
     nav {
@@ -358,18 +393,31 @@
 
 <!--blokk 1 kezd -->
 
-<section  id="untitled-project">
-    <h1>untitled project</h1>
-
-    <h2>Saját könyv a láthatáron!</h2>
-    <p>Javában készül az első, tesztelésről szóló könyvem, valamikor 2026-ban be is fogom fejezni. Szerintem.</p>
-
-    <div class="photo-hover">
-        <img src="img/untitled_project.jpg" alt="Untitled Project" class="photo default">
-        <img src="img/untitled_project_hover.jpg" alt="Untitled Project" class="photo hover">
+<section id="a-tokeletes-a-jo-ellensege">
+  <h1>A tökéletes a jó ellensége</h1>
+  <div class="row">
+    <div class="col-image">
+      <img src="img/a_tokeletes_a_jo_ellensege.jpg" alt="A tökéletes a jó ellensége" class="single-photo">
     </div>
-
-
+    <div class="col-text">
+      <h2>szoftvertesztelés | agilis módszerek | emberi tényezők</h2>
+      <p>
+        Javában készül a szoftvertesztelésről és agilitásról szóló könyvem <i>"A tökéletes a jó ellensége"</i> címmel.<br><br>
+        A tartalomból:
+      </p>
+      <ul>
+        <li>a szoftvertesztelés története</li>
+        <li>a szoftvertesztelés alapjai</li>
+        <li>validáció és verifikáció</li>
+        <li>a hibák okainak a feltárása</li>
+        <li>agilis módszertanok</li>
+        <li>lean és kaizen</li>
+        <li>motiváció</li>
+        <li>fókuszált munkavégzés</li>
+      </ul>
+      <h2>Részletek hamarosan!</h2>
+    </div>
+  </div>
 </section>
 
 <!--blokk 1 vege  -->
@@ -463,10 +511,10 @@
     <div>
       <a href="index.html" class="title">szoftverteszter</a>
     <nav>
-        <a class="nav-section active" href="#untitled-project">untitled project</a>
-        <a class="nav-section" href="#peti-a-szoftverteszter">peti a szoftverteszter</a>
-        <a class="nav-section" href="#szemelyes">személyes</a>
-        <a class="nav-section hidden" href="easteregg/index.html">easter egg</a>
+        <a class="nav-section active" href="#a-tokeletes-a-jo-ellensege">A tökéletes a jó ellensége</a>
+        <a class="nav-section" href="#peti-a-szoftverteszter">Peti a szoftverteszter</a>
+        <a class="nav-section" href="#szemelyes">Személyes</a>
+        <a class="nav-section hidden" href="easteregg/index.html">Easter Egg</a>
     </nav>
     </div>
     <div>
