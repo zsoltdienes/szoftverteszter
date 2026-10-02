@@ -235,8 +235,32 @@
   background-repeat: no-repeat;
 }
 
+.download.btn-print::before {
+  background-image: url('img/book.png');
+}
+
+.download.btn-ebook::before {
+  background-image: url('img/ebook.png');
+}
+
 .download:hover {
   color: orangered;
+}
+
+.download.btn-print {
+  color: #fff;
+}
+
+.download.btn-ebook {
+  color: #fff;
+}
+
+.download.btn-print:hover {
+  color: #F6D6E2;
+}
+
+.download.btn-ebook:hover {
+  color: #08312F;
 }
 
  
@@ -397,26 +421,38 @@
   <h1>A tökéletes a jó ellensége (2026)</h1>
   <div class="row">
     <div class="col-image">
-      <img src="img/a_tokeletes_a_jo_ellensege.jpg" alt="A tökéletes a jó ellensége" class="single-photo">
+      <img src="img/a_tokeletes_a_jo_ellensege.png" alt="A tökéletes a jó ellensége" class="single-photo">
     </div>
     <div class="col-text">
-      <h2>szoftvertesztelés agilis emberekkel és <s>állítólag</s> intelligens gépekkel</h2>
+      <h2>Szoftvertesztelés agilis emberekkel és <s>állítólag</s> intelligens gépekkel.</h2>
       <p>
-        Javában készül a szoftvertesztelésről és agilitásról szóló könyvem <i>"A tökéletes a jó ellensége"</i> címmel.<br><br>
-        A tartalomból:
+        Elkészült az elsősorban szoftvertesztelésről és agilitásról szóló könyvem <i>"A tökéletes a jó ellensége"</i> címmel. Az imént említett főbb témakörök mellett a mesterséges intelligenciáról, valamint a munka és ember kapcsolatáról is bőséggel szó esik egy-egy önálló fejezetben. Általában tárgyilagosan, nem ritkán erős kritikai éllel.<br><br>
+        Néhány cím a tartalomjegyzékből:
       </p>
       <ul>
-        <li>a szoftvertesztelés története</li>
-        <li>a szoftvertesztelés alapjai</li>
-        <li>validáció és verifikáció</li>
-        <li>a hibák okainak a feltárása</li>
-        <li>agilis módszertanok</li>
-        <li>lean és kaizen</li>
-        <li>mesterséges intelligencia</li>
-        <li>motiváció</li>
-        <li>fókuszált munkavégzés</li>
+        <li>Történelmi szoftverhibák</li>
+        <li>Validáció és verifikáció</li>
+        <li>A hibák okainak a feltárása</li>
+        <li>Az agilis felemelkedése</li>
+        <li>Kevesebből, okosabban: a lean születése</li>
+        <li>Hat probléma a Scrummal</li>
+        <li>Az MI felhasználási lehetőségei tesztelőként</li>
+        <li>A mesterséges intelligencia öt hazugsága</li>
+        <li>Motiváció</li>
+        <li>Fókuszált munkavégzés</li>
       </ul>
-      <h2>Részletek hamarosan!</h2>
+      <p>A könyv nyomtatott kiadásban és elektronikus változatban hamarosan megrendelhető, a ≈40 oldalas könyvrészlet ingyenesen letölthető.
+<br><br>
+Nyelv: magyar<br>
+Oldalszám (nyomtatott): 286<br>
+Méret: A4 (210 × 297)<br>
+Formátumok: nyomtatott (puha kötéses), elektronikus (epub, PDF)</p>
+    <h3>Megjelenés: 2026. október</h3>
+
+    <a href="download/a_tokeletes_a_jo_ellensege_minta.pdf" class="download">Ingyenes minta letöltése</a>
+
+    <p>Kérdés esetén írj a <a href="mailto:zsolt.dienes@gmail.com">zsolt.dienes@gmail.com</a> e-mail címre.</p>
+
     </div>
   </div>
 </section>
@@ -431,7 +467,7 @@
     <h1>Peti a szoftverteszter (2019)</h1>
 
     <h2>leírás</h2>
-    <p>A <i>Peti a szoftverteszter</i>t akkor készítettem, amikor a kislányom egy éves volt, és emiatt elég sok, hasonló formátumú (néhány oldalas, kemény lapokból álló) gyerekköny került a kezeim közé. Főhőse egy Peti nevű srác, aki folyamatosan lépked felfelé a tesztelői ranglétrán - manuális tesztelőből automatizált mérnök, majd tesztmenedzser lesz, végül pedig a civilizációnkkal együtt ő maga is elhalálozik. Az olvasáshoz vidámságban gazdag perceket kívánok!</p>
+    <p>A <i>Peti a szoftverteszter</i>t - pontosabban annak első fejezetét - akkor készítettem, amikor a kislányom egy éves volt, és emiatt elég sok, hasonló formátumú (néhány oldalas, kemény lapokból álló) gyerekköny került a kezeim közé. Főhőse egy Peti nevű srác, aki folyamatosan lépked felfelé a tesztelői ranglétrán - manuális tesztelőből automatizált mérnök, majd tesztmenedzser lesz, végül pedig a civilizációnkkal együtt ő maga is elhalálozik. Az olvasáshoz vidámságban gazdag perceket kívánok!</p>
     
     <div class="columns">
     <div class="photo-hover">
@@ -475,7 +511,7 @@
     <h1>személyes</h1>
 
       <h2>bemutatkozás</h2>
-    <p>Hello <del>world</del>, én Dienes Zsolt vagyok, 15+ éve tesztmérnökként tevékenykedem (korábban: NetPincer, Magyar Telekom, OTP Mobil, jelenleg: Graphisoft), Full Advanced ISTQB minősítéssel. Dolgoztam különböző szoftverfejlesztési módszertanban (vízesés, Kanban, Scrum) és különböző szerepkörökben (manuális tesztelés, automatizálás, oktatói tevékenység ISTQB Foundation és Agile tanfolyamokon). Ismerem  és tisztelem az Agilis Kiáltvány, valamint a lean alapértékeit, és nagyon szeretem a nutellát.</p>
+    <p>Hello <del>world</del>, én Dienes Zsolt vagyok, 15+ éve tesztmérnökként tevékenykedem (korábban: NetPincer, Magyar Telekom, OTP Mobil, jelenleg: Graphisoft), Full Advanced ISTQB minősítéssel. Dolgoztam különböző szoftverfejlesztési módszertanban (vízesés, Kanban, Scrum) és különböző szerepkörökben (manuális tesztelés, automatizálás, oktatói tevékenység ISTQB Foundation és Agile tanfolyamokon). Szerzőként a <i>Peti a szoftverteszter</i>t (2019), valamint az <i>A tökéletes a jó ellensége</i> (2026) című könyvet jegyzem.</p>
     
     <div class="columns">
       <div>
